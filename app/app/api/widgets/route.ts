@@ -70,7 +70,7 @@ export async function DELETE(request: Request) {
     const { searchParams } = new URL(request.url);
     const placementId = searchParams.get('placementId');
 
-    if (\!placementId) {
+    if (!placementId) {
       return NextResponse.json({ error: 'placementId required' }, { status: 400 });
     }
 
