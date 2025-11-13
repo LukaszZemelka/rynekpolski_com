@@ -7,10 +7,10 @@ export default function CalendarWidget() {
 
   return (
     <div className="space-y-2">
-      <div className="text-sm font-semibold mb-3">Today's Schedule</div>
+      <div className="text-sm font-semibold mb-3 text-[var(--flame-light-orange)]">Today's Schedule</div>
       {events.map((event, i) => (
-        <div key={i} className="flex gap-3 text-sm">
-          <span className="text-[var(--accent-red)] font-mono">{event.time}</span>
+        <div key={i} className="flex gap-3 text-sm hover:bg-[var(--bg-tertiary)] p-2 rounded transition-colors duration-200">
+          <span className="text-[var(--flame-orange)] font-mono font-semibold">{event.time}</span>
           <span>{event.title}</span>
         </div>
       ))}
