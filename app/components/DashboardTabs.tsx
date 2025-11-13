@@ -1,7 +1,7 @@
 'use client';
 
 import { Dashboard } from '@/lib/types';
-import { useSortable, SortableContext, horizontalListSortingStrategy } from '@dnd-kit/sortable';
+import { useSortable, SortableContext, rectSortingStrategy } from '@dnd-kit/sortable';
 import { DndContext, closestCenter, DragEndEvent } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
 
@@ -52,24 +52,22 @@ export default function DashboardTabs({
   };
 
   return (
-    <div className="overflow-x-auto pb-2">
-      <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-        <SortableContext
-          items={dashboards.map((d) => d.id.toString())}
-          strategy={horizontalListSortingStrategy}
-        >
-          <div className="flex gap-2">
-            {dashboards.map((dashboard) => (
-              <DraggableTab
-                key={dashboard.id}
-                dashboard={dashboard}
-                isActive={activeDashboard?.id === dashboard.id}
-                onClick={() => onSelectDashboard(dashboard)}
-              />
-            ))}
-          </div>
-        </SortableContext>
-      </DndContext>
-    </div>
+    <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+      <SortableContext
+        items={dashboards.map((d) => d.id.toString())}
+        strategy={rectSortingStrategy}
+      >
+        <div className="flex flex-wrap gap-2 pb-2">
+          {dashboards.map((dashboard) => (
+            <DraggableTab
+              key={dashboard.id}
+              dashboard={dashboard}
+              isActive={activeDashboard?.id === dashboard.id}
+              onClick={() => onSelectDashboard(dashboard)}
+            />
+          ))}
+        </div>
+      </SortableContext>
+    </DndContext>
   );
 }
