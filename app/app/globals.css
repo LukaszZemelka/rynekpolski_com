@@ -45,7 +45,7 @@ body {
 }
 
 .widget-card {
-  background: linear-gradient(135deg, var(--bg-secondary) 0%, #221512 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 16px;
