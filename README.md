@@ -1,3 +1,14 @@
+KARTY/DASHBOARDY: 
+- GEOPOLITYKA (sytuacje
+- VIDEO (most trending YT videos
+- TRENDING BUSINESSES (
+
+FEATURES:
+- all allows which user to their business contex. (it's their time when they focused on their busienss and money) so when they want to see video, then dasborad videos will show most trending technologies from their are
+- Users will share info about themself, thheir busines and goals AS-IS. But we will allow them to create few TO-BE variants so they can point out where they want to be in
+
+
+
 # Rynekpolski.com
 
 PostgreSQL database setup for rynekpolski.com application hosted on AWS EC2.
