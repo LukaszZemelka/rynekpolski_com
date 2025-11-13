@@ -1,41 +1,19 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Dashboard, Widget, WidgetPlacement } from '@/lib/types';
-import DashboardTabs from '@/components/DashboardTabs';
+import { useDashboard } from '@/contexts/DashboardContext';
 import WidgetGrid from '@/components/WidgetGrid';
 
 export default function Home() {
-  const [dashboards, setDashboards] = useState<Dashboard[]>([]);
-  const [activeDashboard, setActiveDashboard] = useState<Dashboard | null>(null);
+  const { activeDashboard } = useDashboard();
   const [widgets, setWidgets] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
   const userId = 'demo-user';
-
-  useEffect(() => {
-    loadDashboards();
-  }, []);
 
   useEffect(() => {
     if (activeDashboard) {
       loadWidgets(activeDashboard.id);
     }
   }, [activeDashboard]);
-
-  async function loadDashboards() {
-    try {
-      const res = await fetch(`/api/dashboards?userId=${userId}`);
-      const data = await res.json();
-      setDashboards(data);
-      if (data.length > 0) {
-        setActiveDashboard(data[0]);
-      }
-      setLoading(false);
-    } catch (error) {
-      console.error('Failed to load dashboards:', error);
-      setLoading(false);
-    }
-  }
 
   async function loadWidgets(dashboardId: number) {
     try {
@@ -69,7 +47,7 @@ export default function Home() {
     }
   }
 
-  if (loading) {
+  if (!activeDashboard) {
     return (
       <div className="flex items-center justify-center h-96">
         <div className="text-xl text-[var(--text-secondary)]">Loading...</div>
@@ -78,30 +56,20 @@ export default function Home() {
   }
 
   return (
-    <div className="space-y-6">
-      <DashboardTabs
-        dashboards={dashboards}
-        activeDashboard={activeDashboard}
-        onSelectDashboard={setActiveDashboard}
-      />
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-semibold text-white">
+          {activeDashboard.name}
+        </h2>
+        <button className="px-4 py-2 bg-gradient-to-r from-[var(--flame-deep-red)] via-[var(--flame-orange)] to-[var(--flame-burnt-orange)] text-white rounded-md hover:shadow-lg hover:shadow-[var(--flame-orange)]/30 transition-all duration-300">
+          + Add Widget
+        </button>
+      </div>
       
-      {activeDashboard && (
-        <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <h2 className="text-xl font-semibold text-white">
-              {activeDashboard.name}
-            </h2>
-            <button className="px-4 py-2 bg-gradient-to-r from-[var(--flame-deep-red)] via-[var(--flame-orange)] to-[var(--flame-burnt-orange)] text-white rounded-md hover:shadow-lg hover:shadow-[var(--flame-orange)]/30 transition-all duration-300">
-              + Add Widget
-            </button>
-          </div>
-          
-          <WidgetGrid
-            widgets={widgets}
-            onWidgetMove={handleWidgetMove}
-          />
-        </div>
-      )}
+      <WidgetGrid
+        widgets={widgets}
+        onWidgetMove={handleWidgetMove}
+      />
     </div>
   );
 }
