@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320" width="560" height="320">
+  <defs>
+    <style>
+      .letter { font-family: Arial, sans-serif; font-weight: 900; font-size: 280px; }
+    </style>
+  </defs>
+  <!-- Background (optional, can be transparent) -->
+  <rect width="560" height="320" fill="#000000" opacity="0"/>
+  
+  <!-- R Letter -->
+  <g>
+    <!-- Top half - White -->
+    <text x="20" y="240" class="letter" fill="#E8E8E8" clip-path="url(#clip-top)">R</text>
+    <!-- Bottom half - Red -->
+    <text x="20" y="240" class="letter" fill="#DC143C" clip-path="url(#clip-bottom)">R</text>
+  </g>
+  
+  <!-- P Letter -->
+  <g>
+    <!-- Top half - White -->
+    <text x="280" y="240" class="letter" fill="#E8E8E8" clip-path="url(#clip-top)">P</text>
+    <!-- Bottom half - Red -->
+    <text x="280" y="240" class="letter" fill="#DC143C" clip-path="url(#clip-bottom)">P</text>
+  </g>
+  
+  <!-- Clip paths for half-colored effect -->
+  <defs>
+    <clipPath id="clip-top">
+      <rect x="0" y="0" width="560" height="160" />
+    </clipPath>
+    <clipPath id="clip-bottom">
+      <rect x="0" y="160" width="560" height="160" />
+    </clipPath>
+  </defs>
+</svg>

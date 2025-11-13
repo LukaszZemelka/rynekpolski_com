@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -16,7 +17,15 @@ export default function RootLayout({
       <body className="min-h-screen bg-[var(--bg-primary)]">
         <header className="sticky top-0 z-50 bg-[var(--bg-secondary)] border-b border-[var(--border-color)]">
           <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-            <div className="flex items-center">
+            <div className="flex items-center gap-3">
+              <Image 
+                src="/logo.svg" 
+                alt="RynekPolski.com Logo" 
+                width={80} 
+                height={46}
+                className="h-10 w-auto"
+                priority
+              />
               <h1 className="text-base font-bold text-white">RynekPolski.com</h1>
             </div>
             <div className="flex items-center gap-4">
