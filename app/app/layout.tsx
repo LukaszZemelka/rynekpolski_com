@@ -14,10 +14,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className="min-h-screen bg-[var(--bg-primary)]">
-        <header className="sticky top-0 z-50 bg-[var(--bg-secondary)] border-b border-[var(--border-color)]">
+        <header className="sticky top-0 z-50 bg-gradient-to-r from-[var(--bg-secondary)] via-[#1f1512] to-[var(--bg-secondary)] border-b-2 border-[var(--border-color)] shadow-lg shadow-black/20">
           <div className="container mx-auto px-4 py-3 flex items-center justify-between">
             <div className="flex items-center">
-              <h1 className="text-base font-bold text-white">RynekPolski.com</h1>
+              <h1 className="text-base font-bold bg-gradient-to-r from-[var(--flame-light-orange)] via-[var(--flame-burnt-orange)] to-[var(--flame-orange)] bg-clip-text text-transparent">RynekPolski.com</h1>
             </div>
             <div className="flex items-center gap-4">
               <span className="text-sm text-[var(--text-secondary)]">Demo User</span>

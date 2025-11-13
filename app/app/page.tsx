@@ -91,7 +91,7 @@ export default function Home() {
             <h2 className="text-xl font-semibold text-white">
               {activeDashboard.name}
             </h2>
-            <button className="px-4 py-2 bg-[var(--accent-red)] text-white rounded-md hover:opacity-90">
+            <button className="px-4 py-2 bg-gradient-to-r from-[var(--flame-deep-red)] via-[var(--flame-orange)] to-[var(--flame-burnt-orange)] text-white rounded-md hover:shadow-lg hover:shadow-[var(--flame-orange)]/30 transition-all duration-300">
               + Add Widget
             </button>
           </div>

@@ -8,8 +8,8 @@ export default function NewsFeedWidget() {
   return (
     <div className="space-y-3">
       {news.map((item, i) => (
-        <div key={i} className="border-l-2 border-[var(--accent-red)] pl-3">
-          <p className="text-sm text-white">{item.title}</p>
+        <div key={i} className="border-l-2 border-[var(--flame-orange)] pl-3 hover:border-[var(--flame-amber)] transition-colors duration-300">
+          <p className="text-sm text-white hover:text-[var(--flame-light-orange)] transition-colors duration-200">{item.title}</p>
           <p className="text-xs text-[var(--text-secondary)] mt-1">{item.time}</p>
         </div>
       ))}
