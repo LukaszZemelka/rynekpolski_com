@@ -17,8 +17,7 @@ export default function RootLayout({
         <header className="sticky top-0 z-50 bg-[var(--bg-secondary)] border-b border-[var(--border-color)]">
           <div className="container mx-auto px-4 py-3 flex items-center justify-between">
             <div className="flex items-center">
-              <div className="polish-flag"></div>
-              <h1 className="text-2xl font-bold text-white">RynekPolski.com</h1>
+              <h1 className="text-base font-bold text-white">RynekPolski.com</h1>
             </div>
             <div className="flex items-center gap-4">
               <span className="text-sm text-[var(--text-secondary)]">Demo User</span>

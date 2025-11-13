@@ -53,14 +53,6 @@ body {
   border-color: var(--accent-red);
 }
 
-.polish-flag {
-  background: linear-gradient(to bottom, #FFFFFF 50%, #DC143C 50%);
-  width: 40px;
-  height: 24px;
-  border-radius: 3px;
-  margin-right: 12px;
-}
-
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
