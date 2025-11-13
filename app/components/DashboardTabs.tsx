@@ -57,7 +57,7 @@ export default function DashboardTabs({
         items={dashboards.map((d) => d.id.toString())}
         strategy={rectSortingStrategy}
       >
-        <div className="flex flex-wrap gap-2 pb-2">
+        <div className="flex flex-wrap gap-1 pb-1">
           {dashboards.map((dashboard) => (
             <DraggableTab
               key={dashboard.id}
